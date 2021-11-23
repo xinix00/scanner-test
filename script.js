@@ -113,11 +113,20 @@ var debug = {
 function checkLoaded() {
     return document.readyState === "complete";
 }
-alert(checkLoaded());
-window.addEventListener("load", function() {
+if (checkLoaded())
+{
+    onLoaded();
+}
+else
+{
+    window.addEventListener("load", function() {
+        onLoaded();
+    });
+}
+function onLoaded() {
     debug.init();
     site.init();
     barcode.init();
 
     debug.addDebug("Website started");
-});
+}
