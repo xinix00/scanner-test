@@ -110,23 +110,10 @@ var debug = {
         this.element.innerHTML = `<div>${message}</div>${this.element.innerHTML}`;
     }
 }
-function checkLoaded() {
-    return document.readyState === "complete";
-}
-if (checkLoaded())
-{
-    onLoaded();
-}
-else
-{
-    window.addEventListener("load", function() {
-        onLoaded();
-    });
-}
-function onLoaded() {
+window.addEventListener("load", function() {
     debug.init();
     site.init();
     barcode.init();
 
     debug.addDebug("Website started");
-}
+});
