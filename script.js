@@ -113,7 +113,7 @@ var debug = {
 function checkLoaded() {
     return document.readyState === "complete";
 }
-alert(checkLoaded);
+alert(checkLoaded());
 window.addEventListener("load", function() {
     debug.init();
     site.init();
