@@ -110,6 +110,10 @@ var debug = {
         this.element.innerHTML = `<div>${message}</div>${this.element.innerHTML}`;
     }
 }
+function checkLoaded() {
+    return document.readyState === "complete";
+}
+alert(checkLoaded);
 window.addEventListener("load", function() {
     debug.init();
     site.init();
